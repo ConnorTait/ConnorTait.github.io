@@ -80,3 +80,43 @@ iframe {
 .footer a:hover {
   text-decoration: underline;
 }
+
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.home-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  padding: 2rem 1rem;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.home-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.home-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
