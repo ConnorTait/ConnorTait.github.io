@@ -82,6 +82,22 @@ iframe {
   text-decoration: underline;
 }
 
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.linkedin-link:hover {
+  text-decoration: underline;
+}
+
+.linkedin-icon {
+  vertical-align: middle;
+}
 
 /* Home card layout */
 .home-links {
