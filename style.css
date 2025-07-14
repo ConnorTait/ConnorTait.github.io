@@ -199,7 +199,12 @@ h1, h2 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Overview card layout fix */
+/* Fix for About Me layout */
+.about-card.with-image {
+  display: flex;
+  flex-direction: column;
+}
+
 .about-card.with-image h2 {
   margin-bottom: 1rem;
 }
@@ -210,6 +215,14 @@ h1, h2 {
   gap: 1.5rem;
 }
 
+.about-headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 .about-content-row p {
-  margin: 0;
+  margin-top: 0;
 }
