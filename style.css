@@ -198,3 +198,18 @@ h1, h2 {
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Overview card layout fix */
+.about-card.with-image h2 {
+  margin-bottom: 1rem;
+}
+
+.about-content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.about-content-row p {
+  margin: 0;
+}
