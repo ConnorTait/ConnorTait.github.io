@@ -1,0 +1,69 @@
+/* About Page Styles */
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+}
+
+.about-card h2 {
+  margin-top: 0;
+  color: #222;
+}
+
+.about-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Headshot layout in overview */
+.with-image {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for About Me layout */
+.about-card.with-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card.with-image h2 {
+  margin-bottom: 1rem;
+}
+
+.about-content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.about-headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-content-row p {
+  margin-top: 0;
+}
