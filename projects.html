@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connor Tait | Projects</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="darkmode.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
 
 <body>
@@ -22,6 +24,57 @@
   <main>
     <div class="container">
       <h1>Projects</h1>
+
+      <h2>My videos, mapped!</h2>
+      <p>A map of where I've traveled to while making my travel videos.</p>
+      <div id="map" style="height: 80vh; width: 100%;"></div>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        const map = L.map('map').setView([20, -50], 3);
+
+        L.tileLayer('[https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png]https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        const redIcon = L.icon({
+          iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+
+        const videoPins = [
+          {
+            lat: 25.3,
+            lon: -80.9,
+            title: "Miami Southbound",
+            desc: "Everglades, Biscayne & Dry Tortugas travel video",
+            youtubeId: "VIDEO_ID_1"
+          },
+          {
+            lat: -33.5,
+            lon: -70.7,
+            title: "End of the World – Chile",
+            desc: "Chilean Journey travel video",
+            youtubeId: "VIDEO_ID_2"
+          },
+          // Add more entries as needed
+        ];
+
+        videoPins.forEach(pin => {
+          const content = `
+      <h3>${pin.title}</h3>
+      <p>${pin.desc}</p>
+      <iframe width="260" height="150"
+        src="https://www.youtube.com/embed/${pin.youtubeId}"
+        frameborder="0"
+        allowfullscreen></iframe>
+    `;
+          L.marker([pin.lat, pin.lon], { icon: redIcon })
+            .addTo(map)
+            .bindPopup(content);
+        });
+      </script>
 
       <h2>National Park Service Dashboard</h2>
       <p>Find detailed information on all 474 NPS units and plan your trip!</p>
