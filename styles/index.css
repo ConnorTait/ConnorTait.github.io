@@ -20,7 +20,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: cover;
   background-position: bottom;
-}
+} 
 
 .headshot {
   background-position: top center;
