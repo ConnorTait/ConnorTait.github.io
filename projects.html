@@ -8,13 +8,11 @@
   <link rel="stylesheet" href="style.css" />
   <script src="darkmode.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
 </head>
 
 <body>
   <nav>
     <button id="darkModeToggle" class="dark-toggle">🌓</button>
-
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="videos.html">Videos</a>
@@ -27,7 +25,8 @@
 
       <h2>My videos, mapped!</h2>
       <p>A map of where I've traveled to while making my travel videos.</p>
-      <div id="map" style="height: 80vh; width: 100%;"></div>
+      <div id="map" style="height: 80vh; width: 100%; margin-bottom: 3rem;"></div>
+
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
       <script>
         const map = L.map('map').setView([20, -50], 3);
@@ -36,9 +35,8 @@
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-
-        const redIcon = L.icon({
-          iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
+        const redPinIcon = L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
           iconSize: [32, 32],
           iconAnchor: [16, 32],
           popupAnchor: [0, -32]
@@ -49,29 +47,70 @@
             lat: 25.3,
             lon: -80.9,
             title: "Miami Southbound",
-            desc: "Everglades, Biscayne & Dry Tortugas travel video",
-            youtubeId: "VIDEO_ID_1"
+            desc: "Everglades, Biscayne & Dry Tortugas National Parks",
+            youtubeId: "E8SPnEBbyI4"
           },
           {
-            lat: -33.5,
-            lon: -70.7,
-            title: "The End of the World",
-            desc: "Traveling down Chile and to Patagonia",
-            youtubeId: "bjc6APRaiCA&t=367s"
+            lat: 37.845,
+            lon: -80.999,
+            title: "Wild & Wonderful",
+            desc: "A long weekend in New River Gorge National Park.",
+            youtubeId: "KV04eDHyh8E"
           },
-          // Add more entries as needed
+          {
+            lat: -53.1638,
+            lon: -70.9171,
+            title: "The End of the World",
+            desc: "Traveling down Chile and to Patagonia.",
+            youtubeId: "bjc6APRaiCA"
+          },
+          {
+            lat: 30.2672,
+            lon: -97.7431,
+            title: "Austin",
+            desc: "A college roommate reunion in Austin, TX.",
+            youtubeId: "qXuY5_RMNbE"
+          },
+          {
+            lat: 39.5501,
+            lon: -105.7821,
+            title: "The Rockies",
+            desc: "A 2 week road trip through Colorado, Utah, and Wyoming; hitting 5 national parks!",
+            youtubeId: "5-UhCCi0IkE"
+          },
+          {
+            lat: 39.0,
+            lon: -77.0,
+            title: "Leaving the Home Office",
+            desc: "My first attempt at a more artistic video.",
+            youtubeId: "6QuNZr_16dA"
+          },
+          {
+            lat: 48.8566,
+            lon: 2.3522,
+            title: "The Cities of Smoke and Light",
+            desc: "A trip to London and Paris.",
+            youtubeId: "tMqOI65_lUk"
+          },
+          {
+            lat: 12.5211,
+            lon: -69.9683,
+            title: "Aruba",
+            desc: "A family trip to Aruba.",
+            youtubeId: "T6KkhKsA1rg"
+          }
         ];
 
         videoPins.forEach(pin => {
           const content = `
-      <h3>${pin.title}</h3>
-      <p>${pin.desc}</p>
-      <iframe width="260" height="150"
-        src="https://www.youtube.com/embed/${pin.youtubeId}"
-        frameborder="0"
-        allowfullscreen></iframe>
-    `;
-          L.marker([pin.lat, pin.lon], { icon: redIcon })
+            <h3>${pin.title}</h3>
+            <p>${pin.desc}</p>
+            <iframe width="260" height="150"
+              src="https://www.youtube.com/embed/${pin.youtubeId}"
+              frameborder="0"
+              allowfullscreen></iframe>
+          `;
+          L.marker([pin.lat, pin.lon], { icon: redPinIcon })
             .addTo(map)
             .bindPopup(content);
         });
