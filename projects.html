@@ -32,9 +32,10 @@
       <script>
         const map = L.map('map').setView([20, -50], 3);
 
-        L.tileLayer('[https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png]https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors'
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
 
         const redIcon = L.icon({
           iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
@@ -54,9 +55,9 @@
           {
             lat: -33.5,
             lon: -70.7,
-            title: "End of the World – Chile",
-            desc: "Chilean Journey travel video",
-            youtubeId: "VIDEO_ID_2"
+            title: "The End of the World",
+            desc: "Traveling down Chile and to Patagonia",
+            youtubeId: "bjc6APRaiCA&t=367s"
           },
           // Add more entries as needed
         ];
