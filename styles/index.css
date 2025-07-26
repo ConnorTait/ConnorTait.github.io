@@ -23,6 +23,10 @@
 } 
 
 .headshot {
+  background-position: center 33%;
+}
+
+.travel-pic {
   background-position: top center;
 }
 
