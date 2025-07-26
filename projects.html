@@ -29,7 +29,8 @@
 
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
       <script>
-        const map = L.map('map').setView([20, -50], 3);
+        const map = L.map('map');
+        const bounds = L.latLngBounds([]);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -79,8 +80,8 @@
             youtubeId: "5-UhCCi0IkE"
           },
           {
-            lat: 39.0,
-            lon: -77.0,
+            lat: 38.8858,
+            lon: -77.1054,
             title: "Leaving the Home Office",
             desc: "My first attempt at a more artistic video.",
             youtubeId: "6QuNZr_16dA"
@@ -106,14 +107,18 @@
             <h3>${pin.title}</h3>
             <p>${pin.desc}</p>
             <iframe width="260" height="150"
-              src="https://www.youtube.com/embed/${pin.youtubeId}"
-              frameborder="0"
-              allowfullscreen></iframe>
+            src="https://www.youtube.com/embed/${pin.youtubeId}"
+            frameborder="0"
+            allowfullscreen></iframe>
           `;
           L.marker([pin.lat, pin.lon], { icon: redPinIcon })
             .addTo(map)
             .bindPopup(content);
+
+          bounds.extend([pin.lat, pin.lon]);
         });
+
+        map.fitBounds(bounds);
       </script>
 
       <h2>National Park Service Dashboard</h2>
