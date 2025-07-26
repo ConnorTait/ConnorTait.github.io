@@ -19,7 +19,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
+}
+
+.headshot {
+  background-position: top center;
 }
 
 .home-card::before {
