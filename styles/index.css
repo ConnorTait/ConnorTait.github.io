@@ -23,11 +23,11 @@
 } 
 
 .headshot {
-  background-position: center 30%;
+  background-position: 80% auto;
 }
 
 .travel-pic {
-  background-position: center 25%;
+  background-position: center 26%;
 }
 
 .home-card::before {
