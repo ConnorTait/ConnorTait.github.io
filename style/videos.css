@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 3rem;
     padding: 20px;
 }
 
@@ -23,7 +23,7 @@
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 1rem;
 }
 
 .video-card-title {
@@ -36,12 +36,12 @@
     line-height: 1.2;
 }
 
-.project-card-content {
+.video-card-content {
     width: 100%;
     border-radius: 8px;
 }
 
-.project-card-content iframe {
+.video-card-content iframe {
   width: 100%;
   border: none;
   border-radius: 6px;
