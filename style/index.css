@@ -13,7 +13,7 @@
   /* make them equal width in a single row */
   max-width: 300px;
   min-width: 250px;
-  height: 500px;
+  height: 350px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -38,9 +38,9 @@
 }
 
 .home-card-image {
-  width: 90%;
-  max-width: 200px;
-  height: 150px;
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
   /* fixed height for consistency */
   object-fit: cover;
   /* crop to fit without stretching */
