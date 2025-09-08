@@ -70,6 +70,8 @@ h2 {
 
 .footer a {
   font-weight: 500;
+  text-decoration: none;
+  color: #444;
 }
 
 .footer a:hover {

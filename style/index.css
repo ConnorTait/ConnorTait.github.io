@@ -20,6 +20,8 @@
   height: 400px;
   background: white;
   border-radius: 10px;
+  text-decoration: none;
+  color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
   padding-top: 1rem;
@@ -28,9 +30,7 @@
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  /* let children stack */
   justify-content: space-between;
-  /* spread title, img, text */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
