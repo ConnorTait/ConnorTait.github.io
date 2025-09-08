@@ -17,7 +17,10 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    padding: 20px;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -34,12 +37,13 @@
 }
 
 .project-card-content {
-  width: 100%;
+    width: 100%;
 }
 
 .project-card-content iframe {
-  width: 100%;
-  min-height: 500px;      /* adjust based on your project */
-  border: none;
-  border-radius: 8px;
+    width: 100%;
+    min-height: 500px;
+    /* adjust based on your project */
+    border: none;
+    border-radius: 8px;
 }
