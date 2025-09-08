@@ -1,13 +1,52 @@
-/* Video styling */
-.video-wrapper {
-  margin: 2rem auto;
-  max-width: 700px;
+.title {
+    margin-left: 5rem;
 }
 
-.video-wrapper iframe {
+.video-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Each card */
+.video-card {
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.video-card-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.video-card-desc {
+    font-size: .9rem;
+    line-height: 1.2;
+}
+
+.video-card-content {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-card-content iframe,
+.video-card-content img {
   width: 100%;
-  height: 400px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: none;
+  border-radius: 6px;
+  display: block;
+  box-sizing: border-box;
+  min-height: 400px;
 }
