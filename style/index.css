@@ -1,21 +1,29 @@
 .home-card-container {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: nowrap;  /* prevent wrapping into multiple rows */
 }
 
+/* Each card */
 .home-card {
-  flex: 1 1 250px;
+  flex: 1; /* make them equal width in a single row */
   max-width: 300px;
+  min-width: 250px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;  /* let children stack */
+  justify-content: space-between; /* spread title, img, text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .home-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
@@ -24,10 +32,12 @@
   font-size: 1.2rem;
 }
 
+/* Force images to same size */
 .home-card-image {
-  width: 75%;
+  width: 90%;
   max-width: 200px;
-  height: auto;
+  height: 150px;            /* fixed height for consistency */
+  object-fit: cover;        /* crop to fit without stretching */
   margin: 0 auto 10px;
   display: block;
 }
@@ -35,4 +45,17 @@
 .home-card p {
   font-size: .9rem;
   line-height: 1.2;
+  margin-top: auto; /* keeps text near bottom if uneven */
+}
+
+/* --- Responsive: switch to single column on mobile --- */
+@media (max-width: 768px) {
+  .home-card-container {
+    flex-direction: column;
+    align-items: center; /* center the stacked cards */
+  }
+
+  .home-card {
+    max-width: 90%; /* fill most of screen width on mobile */
+  }
 }
