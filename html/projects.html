@@ -20,91 +20,92 @@
   </nav>
 
   <main>
-    <h1>Projects</h1>
+    <h1 class="title">Projects</h1>
 
     <div class="project-card-container">
       <div class="project-card">
         <h3 class="project-card-title">My videos, mapped!</h3>
         <p class="project-card-desc">An interactive map of where I've traveled to while making my videos.</p>
-        <div id="map" style="height: 80vh; width: 100%; margin-bottom: 3rem;"></div>
+        <div class="project-card-content">
+          <div id="map" style="height: 80vh; width: 100%; margin-bottom: 3rem;"></div>
 
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script>
-          const map = L.map('map');
-          const bounds = L.latLngBounds([]);
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+          <script>
+            const map = L.map('map');
+            const bounds = L.latLngBounds([]);
 
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(map);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-          const redPinIcon = L.icon({
-            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-            iconSize: [32, 32],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -32]
-          });
+            const redPinIcon = L.icon({
+              iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+              iconSize: [32, 32],
+              iconAnchor: [16, 32],
+              popupAnchor: [0, -32]
+            });
 
-          const videoPins = [
-            {
-              lat: 25.3,
-              lon: -80.9,
-              title: "Miami Southbound",
-              desc: "Everglades, Biscayne & Dry Tortugas National Parks",
-              youtubeId: "E8SPnEBbyI4"
-            },
-            {
-              lat: 37.845,
-              lon: -80.999,
-              title: "Wild & Wonderful",
-              desc: "A long weekend in New River Gorge National Park.",
-              youtubeId: "KV04eDHyh8E"
-            },
-            {
-              lat: -53.1638,
-              lon: -70.9171,
-              title: "The End of the World",
-              desc: "Exploring Chile and hiking the W in Patagonia.",
-              youtubeId: "bjc6APRaiCA"
-            },
-            {
-              lat: 30.2672,
-              lon: -97.7431,
-              title: "Austin",
-              desc: "A college roommate reunion in Austin, TX.",
-              youtubeId: "qXuY5_RMNbE"
-            },
-            {
-              lat: 39.5501,
-              lon: -105.7821,
-              title: "The Rockies",
-              desc: "A 2 week road trip through Colorado, Utah, and Wyoming; hitting 5 national parks!",
-              youtubeId: "5-UhCCi0IkE"
-            },
-            {
-              lat: 38.8858,
-              lon: -77.1054,
-              title: "Leaving the Home Office",
-              desc: "My first attempt at a more artistic video.",
-              youtubeId: "6QuNZr_16dA"
-            },
-            {
-              lat: 51.5072,
-              lon: 0.1276,
-              title: "The Cities of Smoke and Light",
-              desc: "A trip to London and Paris.",
-              youtubeId: "tMqOI65_lUk"
-            },
-            {
-              lat: 12.5211,
-              lon: -69.9683,
-              title: "Aruba",
-              desc: "A family trip to Aruba.",
-              youtubeId: "T6KkhKsA1rg"
-            }
-          ];
+            const videoPins = [
+              {
+                lat: 25.3,
+                lon: -80.9,
+                title: "Miami Southbound",
+                desc: "Everglades, Biscayne & Dry Tortugas National Parks",
+                youtubeId: "E8SPnEBbyI4"
+              },
+              {
+                lat: 37.845,
+                lon: -80.999,
+                title: "Wild & Wonderful",
+                desc: "A long weekend in New River Gorge National Park.",
+                youtubeId: "KV04eDHyh8E"
+              },
+              {
+                lat: -53.1638,
+                lon: -70.9171,
+                title: "The End of the World",
+                desc: "Exploring Chile and hiking the W in Patagonia.",
+                youtubeId: "bjc6APRaiCA"
+              },
+              {
+                lat: 30.2672,
+                lon: -97.7431,
+                title: "Austin",
+                desc: "A college roommate reunion in Austin, TX.",
+                youtubeId: "qXuY5_RMNbE"
+              },
+              {
+                lat: 39.5501,
+                lon: -105.7821,
+                title: "The Rockies",
+                desc: "A 2 week road trip through Colorado, Utah, and Wyoming; hitting 5 national parks!",
+                youtubeId: "5-UhCCi0IkE"
+              },
+              {
+                lat: 38.8858,
+                lon: -77.1054,
+                title: "Leaving the Home Office",
+                desc: "My first attempt at a more artistic video.",
+                youtubeId: "6QuNZr_16dA"
+              },
+              {
+                lat: 51.5072,
+                lon: 0.1276,
+                title: "The Cities of Smoke and Light",
+                desc: "A trip to London and Paris.",
+                youtubeId: "tMqOI65_lUk"
+              },
+              {
+                lat: 12.5211,
+                lon: -69.9683,
+                title: "Aruba",
+                desc: "A family trip to Aruba.",
+                youtubeId: "T6KkhKsA1rg"
+              }
+            ];
 
-          videoPins.forEach(pin => {
-            const content = `
+            videoPins.forEach(pin => {
+              const content = `
             <h3>${pin.title}</h3>
             <p>${pin.desc}</p>
             <iframe width="260" height="150"
@@ -112,15 +113,16 @@
             frameborder="0"
             allowfullscreen></iframe>
           `;
-            L.marker([pin.lat, pin.lon], { icon: redPinIcon })
-              .addTo(map)
-              .bindPopup(content);
+              L.marker([pin.lat, pin.lon], { icon: redPinIcon })
+                .addTo(map)
+                .bindPopup(content);
 
-            bounds.extend([pin.lat, pin.lon]);
-          });
+              bounds.extend([pin.lat, pin.lon]);
+            });
 
-          map.fitBounds(bounds);
-        </script>
+            map.fitBounds(bounds);
+          </script>
+        </div>
       </div>
 
       <div class="project-card">
@@ -168,7 +170,7 @@
         <h2 class="project-card-title">Apple Music Listening History</h2>
         <p class="project-card-desc">My music listening history, visualized. (The Power BI free edition doesn't allow
           online publishing.)</p>
-        <div>
+        <div class="project-card-content">
           <img src="../images/AppleMusicHistory.jpg" style=" position: relative; width: 100%;">
         </div>
       </div>
@@ -177,7 +179,9 @@
         <h2 class="project-card-title">Personal Budgeting App</h2>
         <p class="project-card-desc">Analyze your budget compared to the 50/30/20 rule and analyze your financial
           health.</p>
-        <iframe src="../budgetApp/html/home.html"></iframe>
+        <div class="project-card-content">
+          <iframe src="../budgetApp/html/home.html"></iframe>
+        </div>
       </div>
     </div>
 
