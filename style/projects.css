@@ -12,8 +12,8 @@
 
 /* Each card */
 .project-card {
-    max-width: 90%;
-    min-width: 750px;
+    width: 100%;
+    max-width: 800px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -38,12 +38,17 @@
 
 .project-card-content {
     width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fafafa;
 }
 
-.project-card-content iframe {
+.project-card-content iframe,
+.project-card-content img {
     width: 100%;
+    height: auto;
     min-height: 500px;
-    /* adjust based on your project */
     border: none;
     border-radius: 8px;
+    display: block;
 }
