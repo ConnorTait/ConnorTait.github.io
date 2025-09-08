@@ -20,7 +20,7 @@
     padding-top: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -39,14 +39,4 @@
 .video-card-content {
     width: 100%;
     border-radius: 8px;
-}
-
-.video-card-content iframe,
-.video-card-content img {
-  width: 100%;
-  border: none;
-  border-radius: 6px;
-  display: block;
-  box-sizing: border-box;
-  min-height: 400px;
 }
