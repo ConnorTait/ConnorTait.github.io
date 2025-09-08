@@ -1,14 +1,53 @@
-.budget-app-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    overflow: hidden;
+.title {
+  margin-left: 5rem;
 }
 
-.budget-app-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.project-card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Each card */
+.project-card {
+  flex: 1;
+  /* make them equal width in a single row */
+  max-width: 90%;
+  min-width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.project-card-desc {
+  font-size: .9rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: auto;
+}
+
+/* --- Responsive: switch to single column on mobile --- */
+@media (max-width: 768px) {
+  .project-card-container {
+    flex-direction: column;
+    align-items: center;
+    /* center the stacked cards */
+  }
+
+  .project-card {
+    max-width: 90%;
+    /* fill most of screen width on mobile */
+  }
 }

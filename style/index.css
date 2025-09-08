@@ -1,5 +1,5 @@
 .title {
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
 
 .home-card-container {
@@ -45,6 +45,7 @@
   width: 100%;
   max-width: 300px;
   height: 200px;
+  border-radius: 10px;
   /* fixed height for consistency */
   object-fit: cover;
   /* crop to fit without stretching */
