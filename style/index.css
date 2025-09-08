@@ -1,3 +1,7 @@
+.title {
+  margin-left: 10rem;
+}
+
 .home-card-container {
   display: flex;
   justify-content: center;
@@ -47,6 +51,7 @@
   object-position: center;
   margin: 0 auto 10px;
   display: block;
+  flex-shrink: 0;
 }
 
 .home-card-image.top-crop {
@@ -56,8 +61,8 @@
 .home-card p {
   font-size: .9rem;
   line-height: 1.2;
+  margin-bottom: 1rem;
   margin-top: auto;
-  /* keeps text near bottom if uneven */
 }
 
 /* --- Responsive: switch to single column on mobile --- */
