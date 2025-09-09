@@ -30,6 +30,6 @@
 }
 
 .about-headshot{
-  height: 100% !important;
-  width: auto !important;
+  height: auto;
+  max-width:20%;
 }
