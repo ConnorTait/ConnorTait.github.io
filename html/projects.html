@@ -39,7 +39,7 @@
           <!-- Map script -->
           <script>
             // Initialize the map
-            var map = L.map('map').setView([0, 0], 2);
+            var map = L.map('map').setView([0, 0], 0);
 
             // Add OpenStreetMap tiles
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -75,12 +75,23 @@
               const marker = L.marker([pin.lat, pin.lon], { icon: redPin }).addTo(map);
 
               const popupContent = `
-      <h3 style="margin:0;">${pin.title}</h3>
-      <p style="margin:0 0 8px;">${pin.desc}</p>
-      <iframe width="250" height="140" src="https://www.youtube.com/embed/${pin.youtubeId}" 
-              frameborder="0" allowfullscreen></iframe>`;
+                <div style="width:320px; height:auto;">
+                  <h3 style="margin:0;">${pin.title}</h3>
+                  <p style="margin:0 0 8px;">${pin.desc}</p>
+                  <div style="position:relative; padding-bottom:50%; overflow:hidden;">
+                    <iframe src="https://www.youtube.com/embed/${pin.youtubeId}" 
+                            style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+                            frameborder="0" allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              `;
 
-              marker.bindPopup(popupContent);
+              marker.bindPopup(popupContent, {
+                maxWidth: 340,
+                minWidth: 340,
+                className: "video-popup"
+              });
               markers.push(marker);
             });
 
