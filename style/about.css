@@ -24,13 +24,12 @@
   gap: 1rem;
 }
 
-.about-headshot{
-  height: 100px;
-  width: 50px;
+.intro{
+  display: flex;
+  flex-direction: row;
 }
 
-.about-card-title {}
-
-.about-card-desc {}
-
-.about-card-content {}
+.about-headshot{
+  height: 100%;
+  width: auto;
+}
