@@ -7,6 +7,8 @@
   <title>Connor Tait | Projects</title>
   <link rel="stylesheet" href="../style/main.css" />
   <link rel="stylesheet" href="../style/projects.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body>
@@ -26,71 +28,83 @@
         <h3 class="project-card-title">My videos, mapped!</h3>
         <p class="project-card-desc">An interactive map of where I've traveled to while making my videos.</p>
         <div class="project-card-content">
-          
-        </div>
+          <div id="map"></div>
+          <!-- Make sure you put this AFTER Leaflet's CSS -->
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""> var map = L.map('map').setView([0, 0], 1);
 
+              L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              }).addTo(map);
 
-        <div class="project-card">
-          <h2 class="project-card-title">National Park Service Dashboard</h2>
-          <p class="project-card-desc">Find detailed information on all 474 NPS units and plan your trip!</p>
-          <div class="project-card-content">
-            <div class='tableauPlaceholder' id='viz1752108474021' style='position: relative'>
-              <noscript>
-                <a href="#"><img alt='NPS Overview'
-                    src='https://public.tableau.com/static/images/7M/7MFZTMD3M/1_rss.png' style='border: none' /></a>
-              </noscript>
-              <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='path' value='shared&#47;7MFZTMD3M' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https://public.tableau.com/static/images/7M/7MFZTMD3M/1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-              </object>
-            </div>
-            <script type='text/javascript'>
-              var divElement = document.getElementById('viz1752108474021');
-              var vizElement = divElement.getElementsByTagName('object')[0];
-              if (divElement.offsetWidth > 800) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-              } else if (divElement.offsetWidth > 500) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-              } else {
-                vizElement.style.width = '100%';
-                vizElement.style.height = '1127px';
-              }
-              var scriptElement = document.createElement('script');
-              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+              var marker = L.marker([51.5, -0.09]).addTo(map);
             </script>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <h2 class="project-card-title">Apple Music Listening History</h2>
-          <p class="project-card-desc">My music listening history, visualized. (The Power BI free edition doesn't allow
-            online publishing.)</p>
-          <div class="project-card-content">
-            <img src="../images/AppleMusicHistory.jpg" style=" position: relative; width: 100%;">
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h2 class="project-card-title">Personal Budgeting App</h2>
-          <p class="project-card-desc">Analyze your budget compared to the 50/30/20 rule and analyze your financial
-            health.</p>
-          <div class="project-card-content">
-            <iframe src="../budgetApp/html/home.html"></iframe>
-          </div>
         </div>
       </div>
+
+      <div class="project-card">
+        <h2 class="project-card-title">National Park Service Dashboard</h2>
+        <p class="project-card-desc">Find detailed information on all 474 NPS units and plan your trip!</p>
+        <div class="project-card-content">
+          <div class='tableauPlaceholder' id='viz1752108474021' style='position: relative'>
+            <noscript>
+              <a href="#"><img alt='NPS Overview' src='https://public.tableau.com/static/images/7M/7MFZTMD3M/1_rss.png'
+                  style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='path' value='shared&#47;7MFZTMD3M' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/7M/7MFZTMD3M/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+            var divElement = document.getElementById('viz1752108474021');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+              vizElement.style.width = '100%';
+              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else if (divElement.offsetWidth > 500) {
+              vizElement.style.width = '100%';
+              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else {
+              vizElement.style.width = '100%';
+              vizElement.style.height = '1127px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-card-title">Apple Music Listening History</h2>
+        <p class="project-card-desc">My music listening history, visualized. (The Power BI free edition doesn't allow
+          online publishing.)</p>
+        <div class="project-card-content">
+          <img src="../images/AppleMusicHistory.jpg" style=" position: relative; width: 100%;">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-card-title">Personal Budgeting App</h2>
+        <p class="project-card-desc">Analyze your budget compared to the 50/30/20 rule and analyze your financial
+          health.</p>
+        <div class="project-card-content">
+          <iframe src="../budgetApp/html/home.html"></iframe>
+        </div>
+      </div>
+    </div>
 
   </main>
 
