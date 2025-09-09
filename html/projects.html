@@ -29,14 +29,14 @@
         <h3 class="project-card-title">My videos, mapped!</h3>
         <p class="project-card-desc">An interactive map of where I've traveled to while making my videos.</p>
         <div class="project-card-content">
-          <!-- Map placeholder) -->
+          <!-- Map placeholder -->
           <div id="map"></div>
 
           <!-- Leaflet library -->
           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-          <!-- Your map script -->
+          <!-- Map script -->
           <script>
             // Initialize the map
             var map = L.map('map').setView([0, 0], 2);
@@ -47,12 +47,47 @@
               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
 
-            // Add a marker
-            var marker = L.marker([25.3, -80.9]).addTo(map);
-            marker.bindPopup("Miami Southbound").openPopup();
+            // Define a red pin icon
+            const redPin = L.icon({
+              iconUrl: "https://cdn.jsdelivr.net/gh/pointhi/leaflet-color-markers@master/img/marker-icon-red.png",
+              shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41]
+            });
+
+            // Your pins array
+            const videoPins = [
+              { lat: 25.3, lon: -80.9, title: "Miami Southbound", desc: "Everglades, Biscayne & Dry Tortugas National Parks", youtubeId: "E8SPnEBbyI4" },
+              { lat: 37.845, lon: -80.999, title: "Wild & Wonderful", desc: "A long weekend in New River Gorge National Park.", youtubeId: "KV04eDHyh8E" },
+              { lat: -53.1638, lon: -70.9171, title: "The End of the World", desc: "Exploring Chile and hiking the W in Patagonia.", youtubeId: "bjc6APRaiCA" },
+              { lat: 30.2672, lon: -97.7431, title: "Austin", desc: "A college roommate reunion in Austin, TX.", youtubeId: "qXuY5_RMNbE" },
+              { lat: 39.5501, lon: -105.7821, title: "The Rockies", desc: "A 2 week road trip through Colorado, Utah, and Wyoming; hitting 5 national parks!", youtubeId: "5-UhCCi0IkE" },
+              { lat: 38.8858, lon: -77.1054, title: "Leaving the Home Office", desc: "My first attempt at a more artistic video.", youtubeId: "6QuNZr_16dA" },
+              { lat: 51.5072, lon: 0.1276, title: "The Cities of Smoke and Light", desc: "A trip to London and Paris.", youtubeId: "tMqOI65_lUk" },
+              { lat: 12.5211, lon: -69.9683, title: "Aruba", desc: "A family trip to Aruba.", youtubeId: "T6KkhKsA1rg" }
+            ];
+
+            // Add markers and popups
+            const markers = [];
+            videoPins.forEach(pin => {
+              const marker = L.marker([pin.lat, pin.lon], { icon: redPin }).addTo(map);
+
+              const popupContent = `
+      <h3 style="margin:0;">${pin.title}</h3>
+      <p style="margin:0 0 8px;">${pin.desc}</p>
+      <iframe width="250" height="140" src="https://www.youtube.com/embed/${pin.youtubeId}" 
+              frameborder="0" allowfullscreen></iframe>`;
+
+              marker.bindPopup(popupContent);
+              markers.push(marker);
+            });
+
+            // Auto-zoom the map to fit all pins
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds(), { padding: [40, 40] });
           </script>
-
-
         </div>
       </div>
 
