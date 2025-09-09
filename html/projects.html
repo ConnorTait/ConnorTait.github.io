@@ -24,22 +24,34 @@
     <h1 class="title">Projects</h1>
 
     <div class="project-card-container">
+
       <div class="project-card">
         <h3 class="project-card-title">My videos, mapped!</h3>
         <p class="project-card-desc">An interactive map of where I've traveled to while making my videos.</p>
         <div class="project-card-content">
+          <!-- Map placeholder) -->
           <div id="map"></div>
-          <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+          <!-- Leaflet library -->
           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""> var map = L.map('map').setView([0, 0], 1);
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-              L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              }).addTo(map);
+          <!-- Your map script -->
+          <script>
+            // Initialize the map
+            var map = L.map('map').setView([0, 0], 1);
 
-              var marker = L.marker([51.5, -0.09]).addTo(map);
-            </script>
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            // Add a marker
+            var marker = L.marker([51.5, -0.09]).addTo(map);
+            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+          </script>
+
 
         </div>
       </div>
