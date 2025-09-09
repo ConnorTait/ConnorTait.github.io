@@ -43,13 +43,14 @@
 
 .project-card-content iframe,
 .project-card-content img {
-  width: 100%;
-  border: none;
-  border-radius: 6px;
-  display: block;
-  box-sizing: border-box;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    box-sizing: border-box;
 }
 
-#map { 
-    height: 100px; 
+#map {
+    height: 100%;
+    width: 100%;
 }
