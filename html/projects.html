@@ -7,7 +7,6 @@
   <title>Connor Tait | Projects</title>
   <link rel="stylesheet" href="../style/main.css" />
   <link rel="stylesheet" href="../style/projects.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -27,128 +26,71 @@
         <h3 class="project-card-title">My videos, mapped!</h3>
         <p class="project-card-desc">An interactive map of where I've traveled to while making my videos.</p>
         <div class="project-card-content">
-          <div id="map" style="height: 80vh; width: 100%; margin-bottom: 3rem;"></div>
-
-          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-          <script>
-            const map = L.map('map');
-            const bounds = L.latLngBounds([]);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-            const redPinIcon = L.icon({
-              iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-              iconSize: [32, 32],
-              iconAnchor: [16, 32],
-              popupAnchor: [0, -32]
-            });
-
-            const videoPins = [
-              { lat: 25.3, lon: -80.9, title: "Miami Southbound", desc: "Everglades, Biscayne & Dry Tortugas National Parks", youtubeId: "E8SPnEBbyI4" },
-              { lat: 37.845, lon: -80.999, title: "Wild & Wonderful", desc: "A long weekend in New River Gorge National Park.", youtubeId: "KV04eDHyh8E" },
-              { lat: -53.1638, lon: -70.9171, title: "The End of the World", desc: "Exploring Chile and hiking the W in Patagonia.", youtubeId: "bjc6APRaiCA" },
-              { lat: 30.2672, lon: -97.7431, title: "Austin", desc: "A college roommate reunion in Austin, TX.", youtubeId: "qXuY5_RMNbE" },
-              { lat: 39.5501, lon: -105.7821, title: "The Rockies", desc: "A 2 week road trip through Colorado, Utah, and Wyoming; hitting 5 national parks!", youtubeId: "5-UhCCi0IkE" },
-              { lat: 38.8858, lon: -77.1054, title: "Leaving the Home Office", desc: "My first attempt at a more artistic video.", youtubeId: "6QuNZr_16dA" },
-              { lat: 51.5072, lon: 0.1276, title: "The Cities of Smoke and Light", desc: "A trip to London and Paris.", youtubeId: "tMqOI65_lUk" },
-              { lat: 12.5211, lon: -69.9683, title: "Aruba", desc: "A family trip to Aruba.", youtubeId: "T6KkhKsA1rg" }
-            ];
-
-            videoPins.forEach(pin => {
-              const content = `
-      <h3>${pin.title}</h3>
-      <p>${pin.desc}</p>
-      <iframe width="260" height="150"
-        src="https://www.youtube.com/embed/${pin.youtubeId}"
-        frameborder="0"
-        allowfullscreen></iframe>
-    `;
-              L.marker([pin.lat, pin.lon], { icon: redPinIcon })
-                .addTo(map)
-                .bindPopup(content);
-
-              bounds.extend([pin.lat, pin.lon]);
-            });
-
-            map.fitBounds(bounds);
-
-            // Fix layout issues when inside flexbox
-            setTimeout(() => {
-              map.invalidateSize();
-            }, 200);
-
-            // Recalculate if window is resized
-            window.addEventListener('resize', () => {
-              map.invalidateSize();
-            });
-          </script>
-
+          
         </div>
-      </div>
 
-      <div class="project-card">
-        <h2 class="project-card-title">National Park Service Dashboard</h2>
-        <p class="project-card-desc">Find detailed information on all 474 NPS units and plan your trip!</p>
-        <div class="project-card-content">
-          <div class='tableauPlaceholder' id='viz1752108474021' style='position: relative'>
-            <noscript>
-              <a href="#"><img alt='NPS Overview' src='https://public.tableau.com/static/images/7M/7MFZTMD3M/1_rss.png'
-                  style='border: none' /></a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='path' value='shared&#47;7MFZTMD3M' />
-              <param name='toolbar' value='yes' />
-              <param name='static_image' value='https://public.tableau.com/static/images/7M/7MFZTMD3M/1.png' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-            </object>
+
+        <div class="project-card">
+          <h2 class="project-card-title">National Park Service Dashboard</h2>
+          <p class="project-card-desc">Find detailed information on all 474 NPS units and plan your trip!</p>
+          <div class="project-card-content">
+            <div class='tableauPlaceholder' id='viz1752108474021' style='position: relative'>
+              <noscript>
+                <a href="#"><img alt='NPS Overview'
+                    src='https://public.tableau.com/static/images/7M/7MFZTMD3M/1_rss.png' style='border: none' /></a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='path' value='shared&#47;7MFZTMD3M' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/7M/7MFZTMD3M/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+              </object>
+            </div>
+            <script type='text/javascript'>
+              var divElement = document.getElementById('viz1752108474021');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+              } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+              } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1127px';
+              }
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
           </div>
-          <script type='text/javascript'>
-            var divElement = document.getElementById('viz1752108474021');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) {
-              vizElement.style.width = '100%';
-              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-              vizElement.style.width = '100%';
-              vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else {
-              vizElement.style.width = '100%';
-              vizElement.style.height = '1127px';
-            }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-          </script>
         </div>
-      </div>
 
-      <div class="project-card">
-        <h2 class="project-card-title">Apple Music Listening History</h2>
-        <p class="project-card-desc">My music listening history, visualized. (The Power BI free edition doesn't allow
-          online publishing.)</p>
-        <div class="project-card-content">
-          <img src="../images/AppleMusicHistory.jpg" style=" position: relative; width: 100%;">
+        <div class="project-card">
+          <h2 class="project-card-title">Apple Music Listening History</h2>
+          <p class="project-card-desc">My music listening history, visualized. (The Power BI free edition doesn't allow
+            online publishing.)</p>
+          <div class="project-card-content">
+            <img src="../images/AppleMusicHistory.jpg" style=" position: relative; width: 100%;">
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <h2 class="project-card-title">Personal Budgeting App</h2>
-        <p class="project-card-desc">Analyze your budget compared to the 50/30/20 rule and analyze your financial
-          health.</p>
-        <div class="project-card-content">
-          <iframe src="../budgetApp/html/home.html"></iframe>
+        <div class="project-card">
+          <h2 class="project-card-title">Personal Budgeting App</h2>
+          <p class="project-card-desc">Analyze your budget compared to the 50/30/20 rule and analyze your financial
+            health.</p>
+          <div class="project-card-content">
+            <iframe src="../budgetApp/html/home.html"></iframe>
+          </div>
         </div>
       </div>
-    </div>
 
   </main>
 
