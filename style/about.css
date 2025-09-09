@@ -24,12 +24,13 @@
   gap: 1rem;
 }
 
-.intro{
+.intro {
   display: flex !important;
   flex-direction: row !important;
 }
 
-.about-headshot{
+.about-headshot {
   height: auto;
-  max-width:20%;
+  max-width: 20%;
+  border-radius: 10px;
 }
