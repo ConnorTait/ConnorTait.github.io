@@ -34,3 +34,18 @@
   max-width: 20%;
   border-radius: 10px;
 }
+
+.about-college {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.job {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.about-logo {
+  height: auto;
+  max-width: 15%;
+}
