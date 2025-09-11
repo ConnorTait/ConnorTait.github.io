@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   gap: 0px;
-  padding: 20px;
   flex-wrap: nowrap;
   /* prevent wrapping into multiple rows */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
