@@ -9,6 +9,7 @@
   padding: 20px;
   flex-wrap: nowrap;
   /* prevent wrapping into multiple rows */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Each card */
@@ -21,7 +22,6 @@
   background: white;
   text-decoration: none;
   color: black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
   padding: 2rem;
   display: flex;
@@ -44,7 +44,7 @@
   width: 100%;
   max-width: 300px;
   height: 250px;
-  border-radius: 10px;
+  border-radius: 5px;
   /* fixed height for consistency */
   object-fit: cover;
   /* crop to fit without stretching */
