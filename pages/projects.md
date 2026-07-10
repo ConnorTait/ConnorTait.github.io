@@ -4,8 +4,6 @@ title: Projects
 permalink: /projects/
 ---
 
-# Projects
-
 A collection of personal projects exploring data science, visualization, GIS, and technology.
 
 ---

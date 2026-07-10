@@ -4,10 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-# About Me
-
-Welcome! I'm Connor.
-
 ## Background
 
 <!-- Add your professional background here -->

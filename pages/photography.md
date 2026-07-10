@@ -4,8 +4,6 @@ title: Photography
 permalink: /photography/
 ---
 
-# Photography
-
 A collection of photos from my travels, hikes, and outdoor adventures.
 
 ---

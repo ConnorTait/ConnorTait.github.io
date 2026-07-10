@@ -6,3 +6,13 @@ url: "https://connortait.github.io"
 baseurl: ""
 
 markdown: kramdown
+
+footer:
+  links:
+    - title: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/connortait/
+
+    - title: GitHub
+      icon: github
+      url: https://github.com/ConnorTait

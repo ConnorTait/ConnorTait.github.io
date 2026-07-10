@@ -25,8 +25,3 @@ Interactive exploration of national park data.
 📷 Photography  
 
 ---
-
-## Find Me Online
-
-- [GitHub](https://github.com/ConnorTait)
-- [LinkedIn](www.linkedin.com/in/connortait)

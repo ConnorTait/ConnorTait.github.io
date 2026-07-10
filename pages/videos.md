@@ -4,8 +4,6 @@ title: Videos
 permalink: /videos/
 ---
 
-# Videos
-
 A collection of videos covering projects, travel, and other interests.
 
 ---
