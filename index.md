@@ -3,13 +3,7 @@ layout: home
 title: Home
 ---
 
-# Connor Tait
-
-## Data Science | GIS | National Parks
-
-Welcome to my personal website.
-
-I use data, maps, and technology to explore the world around me.
+Hi! I'm Connor Tait. This is my personal website where I share projects and other creative ventures.
 
 ---
 
@@ -34,6 +28,5 @@ Interactive exploration of national park data.
 
 ## Find Me Online
 
-- [GitHub]()
-- [LinkedIn]()
-- [Email]()
+- [GitHub](https://github.com/ConnorTait)
+- [LinkedIn](www.linkedin.com/in/connortait)
