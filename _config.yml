@@ -7,12 +7,12 @@ baseurl: ""
 
 markdown: kramdown
 
-footer:
-  links:
-    - title: LinkedIn
-      icon: linkedin
-      url: https://www.linkedin.com/in/connortait/
+minima:
+  social_links:
+    - platform: github
+      user_url: "https://github.com/ConnorTait"
+    - platform: linkedin
+      user_url: "https://linkedin.com/in/connortait"
 
-    - title: GitHub
-      icon: github
-      url: https://github.com/ConnorTait
+  custom_css:
+    - style
